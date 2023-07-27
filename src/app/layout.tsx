@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Dancing_Script, Inter, Roboto_Slab } from "next/font/google";
+import { Footer } from "~/partials";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`${inter.variable} ${dancingScript.variable} ${robotoSlab.variable} font-roboto`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

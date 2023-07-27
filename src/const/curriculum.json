@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "MODULE 1",
+    "module": "Maternal Physiology & Related Conditions Puerperium and Lactation Antenatal Care Role of ultrasound in obstetrics Assessment of fetal wellbeing"
+    
+  },
+  {
+    "id": 2,
+    "name": "MODULE 2",
+    "module": "Fetal physiology and normal growth Small for gestational age Amniotic fluid disorders Coronavirus Infection in Pregnancy Multifetal pregnancy"
+  },
+  {
+    "id": 3,
+    "name": "MODULE 3",
+    "module": "Prenatal diagnosis Cervical cancer Endometrial cancer Thyroid diseases in pregnancy Diabetes in pregnancy"
+  },
+  {
+    "id": 4,
+    "name": "MODULE 4",
+    "module": "Hypertensive disorders in pregnancy Renal Diseases in pregnancy Epilepsy and pregnancy Hematological disorders in pregnancy Antepartum Hemorrhage"
+  },
+  {
+    "id": 5,
+    "name": "MODULE 5",
+    "module": "Postpartum Hemorrhage Preterm Labor Hemolytic Disease of Fetus & Neonate Systemic lupus erythematosus Intrahepatic Cholestasis of pregnancy"
+  },
+  {
+    "id": 6,
+    "name": "MODULE 6",
+    "module":"Cardiac illness in pregnancy Venous thromboembolism Obstetric emergencies Perinatal Infections Part 1 Perinatal Infections Part 2"
+  },
+  {
+    "id": 7,
+    "name": "MODULE 7",
+    "module": "Induction of labor Normal Labor & Delivery Abnormal labor Operative delivery Endometriosis"
+  },
+  {
+    "id": 8,
+    "name": "MODULE 8",
+    "module": "Premenstrual syndrome Polycystic ovary syndrome (PCOS) Abnormal uterine bleeding Gynecological infections & ulcers Urinary Incontinence"
+  },
+  {
+    "id": 9,
+    "name": "MODULE 9",
+    "module": "Pelvic Inflammatory Disease (PID) Methods of Contraception Miscarriage & Ectopic Screening of cervical cancer Ovarian cancer"
+  },
+  {
+    "id": 10,
+    "name": "MODULE 10",
+    "module": "GTD and Puberty & their disorders Amenorrhea Uterine Fibroids Menopause Prolapse"
+  }
+]

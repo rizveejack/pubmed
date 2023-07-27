@@ -1,5 +1,5 @@
 import { HomeHeader } from "~/partials";
-import { Associated, Intro } from "~/widgets";
+import { Associated, Course, Intro } from "~/widgets";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <HomeHeader />
       {/* Another Part */}
       <Intro />
+      <Course />
       {/* Another module */}
       <Associated />
     </>
