@@ -4,6 +4,7 @@ module.exports = {
     "./src/utils/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/widgets/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/partials/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     fontFamily: {
