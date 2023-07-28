@@ -34,7 +34,7 @@ export default function HomeHeader() {
           Enroll Now
         </Link>
       </div>
-      <div className="absolute h-52 w-full bottom-0 left-0">
+      <div className="absolute h-44 w-full lg:bottom-10 left-0 bottom-0">
         <div className="max-w-7xl mx-auto bg-black/20 grid-cols-3 grid text-center text-white h-full items-center rounded-md">
           <div>
             <h3 className="text-6xl ">10</h3>
