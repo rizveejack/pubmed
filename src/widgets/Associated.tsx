@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function Associated() {
   return (
     <>
-      <div className="max-w-2xl mx-auto text-center py-20">
+      <div className="max-w-2xl mx-auto text-center lg:py-20 py-10">
         <strong className="text-3xl font-bold">
           University We already Associated With
         </strong>
@@ -12,16 +12,8 @@ export default function Associated() {
           commodi ipsam.
         </p>
       </div>
-      <div className="grid grid-cols-6 grid-flow-row max-w-7xl mx-auto items-center mb-20 gap-10">
-        <div className="rounded-s-full w-36 h-36 relative">
-          <Image
-            alt="logo"
-            src={"/images/fcub.png"}
-            fill
-            className="object-cover "
-          />
-        </div>
-        <div className="rounded-s-full w-36 h-36 relative">
+      <div className="grid grid-cols-2 lg:grid-cols-6 grid-flow-row max-w-7xl mx-auto items-center justify-center mb-20 gap-10 p-5">
+        <div className="rounded-s-full aspect-square relative">
           <Image
             alt="logo"
             src={"/images/kyoto.png"}
@@ -29,7 +21,7 @@ export default function Associated() {
             className="object-cover "
           />
         </div>
-        <div className="rounded-s-full w-36 h-36 relative">
+        <div className="rounded-s-full aspect-square relative">
           <Image
             alt="logo"
             src={"/images/sig.png"}
@@ -37,7 +29,7 @@ export default function Associated() {
             className="object-cover "
           />
         </div>
-        <div className="rounded-s-full w-36 h-36 relative">
+        <div className="rounded-s-full aspect-square relative">
           <Image
             alt="logo"
             src={"/images/umm.png"}
@@ -45,7 +37,15 @@ export default function Associated() {
             className="object-cover "
           />
         </div>
-        <div className="rounded-s-full w-36 h-36 relative">
+        <div className="rounded-s-full aspect-square relative">
+          <Image
+            alt="logo"
+            src={"/images/fcub.png"}
+            fill
+            className="object-cover "
+          />
+        </div>
+        <div className="rounded-s-full aspect-square relative">
           <Image
             alt="logo"
             src={"/images/usu.png"}
@@ -53,7 +53,7 @@ export default function Associated() {
             className="object-cover "
           />
         </div>
-        <div className="rounded-s-full w-36 h-36 relative">
+        <div className="rounded-s-full aspect-square relative">
           <Image
             alt="logo"
             src={"/images/ver.png"}

@@ -5,8 +5,8 @@ import { Star } from "~/utils/icons";
 import curriculum from "../const/curriculum.json";
 export default function Course() {
   return (
-    <div className="max-w-7xl mx-auto p-20">
-      <div className="grid grid-cols-2 gap-5">
+    <div className="max-w-7xl mx-auto lg:p-20 p-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         <div className="">
           <strong className="font-medium text-2xl text-center">
             Welcome to the “MCPH on Advance Gynaecology and Obstetrics” at
@@ -24,8 +24,8 @@ export default function Course() {
           <strong className="font-medium text-2xl">
             Master Course on Advance Gynecology and Obstetrics
           </strong>
-          <div className="grid grid-cols-2 gap-5 mt-5">
-            <div className="flex gap-2 w-full items-center justify-center">
+          <div className="grid grid-cols-3 gap-5 mt-5">
+            <div className="flex gap-2 w-full items-center  col-span-2">
               <div className="w-20 h-20 relative">
                 <Image
                   src={"/images/profile.jpeg"}

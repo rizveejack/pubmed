@@ -12,7 +12,7 @@ export default function HomeHeader() {
       >
         <source src="/images/bg.mp4" type="video/mp4" />
       </video>
-      <div className="absolute min-h-full min-w-full bg-black/75 top-0 left-0 flex flex-col justify-center items-center">
+      <div className="absolute min-h-full min-w-full bg-black/75 top-0 left-0 flex flex-col justify-center items-center p-5">
         <Image
           src={"/images/logo.png"}
           alt="Logo"
@@ -21,15 +21,15 @@ export default function HomeHeader() {
           className="block object-contain mb-10 shadow-md rounded-full"
         />
 
-        <h1 className="text-white text-5xl font-dancing-script">
+        <h1 className="text-white text-5xl font-dancing-script text-center mb-5">
           Public Health & Medical Academy
         </h1>
-        <h2 className="text-white text-3xl ">
+        <h2 className="text-white text-3xl text-center">
           The Learning Platform of MCPH UK
         </h2>
         <Link
           href={"/"}
-          className="text-white bg-amber-500 py-3 px-10 rounded-md mt-10 border-white border hover:bg-transparent  transition-all"
+          className="text-white bg-amber-500 py-3 px-10 rounded-md my-10 border-white border hover:bg-transparent  transition-all"
         >
           Enroll Now
         </Link>
