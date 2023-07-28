@@ -28,7 +28,7 @@ export default function HomeHeader() {
           The Learning Platform of MCPH UK
         </h2>
         <Link
-          href={"/"}
+          href={"/course"}
           className="text-white bg-amber-500 py-3 px-10 rounded-md my-10 border-white border hover:bg-transparent  transition-all"
         >
           Enroll Now

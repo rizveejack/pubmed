@@ -54,7 +54,7 @@ export default function Course() {
           </div>
           <div className="flex items-center">
             <Link
-              href={"/"}
+              href={"/course"}
               className="bg-amber-500 text-white font-medium text-3xl px-10 py-3 rounded-full mx-auto hover:bg-amber-600"
             >
               Enroll Now
