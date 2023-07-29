@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ModuleCard } from "~/utils";
 import { Star } from "~/utils/icons";
-import curriculum from "../const/curriculum.json";
+import { CourseBody } from ".";
 
 type CourseType = {
   id: number;
@@ -11,22 +10,33 @@ type CourseType = {
   content: string;
   origin_price: string;
   price: string;
+  meta_data: {
+    _lp_requirements: string[];
+    _lp_faqs: string[];
+    _lp_target_audiences: string[];
+    _lp_key_features: string[];
+  };
 };
 
 async function getCourseData(courseId: number) {
   const data = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/courses/${courseId}`
+    `${process.env.NEXT_PUBLIC_API_URL}/courses/${courseId}`,
+    {
+      next: {
+        revalidate: 1,
+      },
+    }
   );
   const json = await data.json();
   return json;
 }
 
-export default async function Course() {
+export default async function CourseDetails() {
   const course: CourseType = await getCourseData(17);
 
   return (
-    <div className="max-w-7xl mx-auto lg:p-20 p-5">
-      <div className="grid grid-cols-1  gap-5 lg:grid-cols-2">
+    <div className="max-w-5xl mx-auto lg:p-20 p-5">
+      <div className="grid grid-cols-1  gap-5">
         <div className="">
           <strong className="font-medium text-2xl text-center">
             Welcome to the “MCPH on Advance Gynaecology and Obstetrics” at
@@ -57,7 +67,7 @@ export default async function Course() {
                 <div className="text-sm">Public Health & Medical Academy</div>
               </div>
             </div>
-            <div className="flex flex-col py-2">
+            <div className="flex flex-col py-2 items-end">
               <div className="text-sm font-bold text-gray-400">Rating </div>
               <div className="flex">
                 {[1, 2, 3, 4, 5].map((item, index) => (
@@ -66,30 +76,15 @@ export default async function Course() {
               </div>
             </div>
           </div>
-          <div className="text-center flex items-center justify-center space-x-5 my-10">
-            <span className="line-through text-xl">{course.origin_price}৳</span>
-            <span className="font-bold text-5xl text-red-600">
-              {course.price}৳
-            </span>
-          </div>
-          <div className="flex items-center">
-            <Link
-              href={"/course"}
-              className="bg-amber-500 text-white font-medium text-3xl px-10 py-3 rounded-full mx-auto hover:bg-amber-600"
-            >
-              Enroll Now
-            </Link>
-          </div>
         </div>
-        <div className="">
-          <strong className="font-medium text-center block text-2xl mb-5">
-            Course Curriculum
-          </strong>
-          <div className="grid grid-cols-2 grid-flow-row gap-3">
-            {curriculum.map((item, index) => (
-              <ModuleCard key={index} item={item} />
-            ))}
-          </div>
+        <CourseBody course={course} />
+        <div className="flex items-center">
+          <Link
+            href={"/course"}
+            className="bg-amber-500 text-white font-medium text-3xl px-10 py-3 rounded-full mx-auto hover:bg-amber-600"
+          >
+            Enroll Now
+          </Link>
         </div>
       </div>
     </div>

@@ -1,26 +1,25 @@
 import Image from "next/image";
-
-type CourseType = {
-  id: number;
-  name: string;
-  image: string;
-};
-
-async function getCourseData(courseId: number) {
-  const data = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/courses/${courseId}`
-  );
-  const json = await data.json();
-  return json;
-}
-
+import { CourseDetails } from "~/widgets";
 export default async function Page() {
-  const data: CourseType = await getCourseData(17);
-  // console.log(data.image);
-
   return (
     <div>
-      <Image src={data.image} alt="banner" width={300} height={200} />
+      <div className="flex flex-col justify-center items-center p-5">
+        <Image
+          src={"/images/logo.png"}
+          alt="Logo"
+          width={150}
+          height={150}
+          className="block object-contain mb-10 shadow-md rounded-full"
+        />
+
+        <h1 className="text-5xl font-dancing-script text-center mb-5">
+          Public Health & Medical Academy
+        </h1>
+        <h2 className="text-3xl text-center">
+          The Learning Platform of MCPH UK
+        </h2>
+      </div>
+      <CourseDetails />
     </div>
   );
 }
