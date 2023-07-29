@@ -3,7 +3,27 @@ import Link from "next/link";
 import { ModuleCard } from "~/utils";
 import { Star } from "~/utils/icons";
 import curriculum from "../const/curriculum.json";
-export default function Course() {
+
+type CourseType = {
+  id: number;
+  name: string;
+  image: string;
+  content: string;
+  origin_price: string;
+  price: string;
+};
+
+async function getCourseData(courseId: number) {
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/courses/${courseId}`
+  );
+  const json = await data.json();
+  return json;
+}
+
+export default async function Course() {
+  const course: CourseType = await getCourseData(17);
+
   return (
     <div className="max-w-7xl mx-auto lg:p-20 p-5">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -15,15 +35,13 @@ export default function Course() {
 
           <div className="aspect-video relative my-5">
             <Image
-              src={"/images/mcph.png"}
+              src={course.image}
               alt="Master Course on Advance Gynecology and Obstetrics"
               fill
               className="object-cover absolute p-2 shadow-lg"
             />
           </div>
-          <strong className="font-medium text-2xl">
-            Master Course on Advance Gynecology and Obstetrics
-          </strong>
+          <strong className="font-medium text-2xl">{course.name}</strong>
           <div className="grid grid-cols-3 gap-5 mt-5">
             <div className="flex gap-2 w-full items-center  col-span-2">
               <div className="w-20 h-20 relative">
@@ -49,8 +67,10 @@ export default function Course() {
             </div>
           </div>
           <div className="text-center flex items-center justify-center space-x-5 my-10">
-            <span className="line-through text-xl">75,000৳</span>
-            <span className="font-bold text-5xl text-red-600">20,000৳</span>
+            <span className="line-through text-xl">{course.origin_price}৳</span>
+            <span className="font-bold text-5xl text-red-600">
+              {course.price}৳
+            </span>
           </div>
           <div className="flex items-center">
             <Link
