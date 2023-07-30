@@ -1,5 +1,6 @@
 import { getData } from '~/server/getData'
-import { SectionCard } from '~/utils'
+import { validateToken } from '~/server/validateToken'
+import { Logout, SectionCard } from '~/utils'
 type SectionsType = {
     id: string
     name: string
@@ -11,6 +12,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
         courseId: 17,
         path: '/sections/sections-by-course-id',
     })
+    const tokenStatus = await validateToken()
 
     return (
         <div className="flex max-h-screen">
@@ -19,7 +21,10 @@ export default async function Layout({ children }: { children: React.ReactNode }
                     <SectionCard section={section} key={section.id} />
                 ))}
             </div>
-            <div className="p-10 w-full">{children}</div>
+            <div className="p-10 w-full">
+                {tokenStatus.data.status === 200 ? <Logout /> : null}
+                {children}
+            </div>
         </div>
     )
 }

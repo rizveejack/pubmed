@@ -1,8 +1,9 @@
 'use client'
 import Cookies from 'js-cookie'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
-
 export default function LoginForm() {
+    const router = useRouter()
     const {
         register,
         handleSubmit,
@@ -20,9 +21,13 @@ export default function LoginForm() {
         const json = await res.json()
 
         if (json.status === 200) {
-            Cookies.set('token', json.result.token, { expires: 1 })
+            try {
+                Cookies.set('token', json.result.token, { expires: 1 })
+                router.push('/course')
+            } catch (error) {}
         }
     }
+
     return (
         <div className="min-h-screen">
             <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
