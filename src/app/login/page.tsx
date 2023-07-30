@@ -1,3 +1,9 @@
+import { LoginForm } from '~/widgets'
+
 export default function Page() {
-  return <div>This is Login page</div>;
+    return (
+        <div>
+            <LoginForm />
+        </div>
+    )
 }
