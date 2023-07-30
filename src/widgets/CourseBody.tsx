@@ -17,8 +17,6 @@ type CourseBody = {
 };
 
 export default function CourseBody({ course }: CourseBody) {
-  console.log(course);
-
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <div className="">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getData } from "~/server/getData";
 import { ModuleCard } from "~/utils";
 import { Star } from "~/utils/icons";
 import curriculum from "../const/curriculum.json";
@@ -13,16 +14,11 @@ type CourseType = {
   price: string;
 };
 
-async function getCourseData(courseId: number) {
-  const data = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/courses/${courseId}`
-  );
-  const json = await data.json();
-  return json;
-}
-
 export default async function Course() {
-  const course: CourseType = await getCourseData(17);
+  const course: CourseType = await getData({
+    path: "/courses",
+    courseId: 17,
+  });
 
   return (
     <div className="max-w-7xl mx-auto lg:p-20 p-5">

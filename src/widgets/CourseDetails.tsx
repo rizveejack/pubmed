@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getData } from "~/server/getData";
 import { Star } from "~/utils/icons";
 import { CourseBody } from ".";
 
@@ -16,23 +17,18 @@ type CourseType = {
     _lp_target_audiences: string[];
     _lp_key_features: string[];
   };
+  sections: {
+    items: {
+      id: number;
+    }[];
+  }[];
 };
 
-async function getCourseData(courseId: number) {
-  const data = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/courses/${courseId}`,
-    {
-      next: {
-        revalidate: 1,
-      },
-    }
-  );
-  const json = await data.json();
-  return json;
-}
-
 export default async function CourseDetails() {
-  const course: CourseType = await getCourseData(17);
+  const course: CourseType = await getData({
+    path: "/courses",
+    courseId: 17,
+  });
 
   return (
     <div className="max-w-5xl mx-auto lg:p-20 p-5">
@@ -80,7 +76,7 @@ export default async function CourseDetails() {
         <CourseBody course={course} />
         <div className="flex items-center">
           <Link
-            href={"/course"}
+            href={`/course/lessons/${course.sections[0].items[0].id}`}
             className="bg-amber-500 text-white font-medium text-3xl px-10 py-3 rounded-full mx-auto hover:bg-amber-600"
           >
             Enroll Now
