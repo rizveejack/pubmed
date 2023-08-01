@@ -15,13 +15,13 @@ export default async function Layout({ children }: { children: React.ReactNode }
     const tokenStatus = await validateToken()
 
     return (
-        <div className="flex max-h-screen">
-            <div className="max-w-96 bg-slate-400 overflow-y-scroll">
+        <div className="flex h-screen">
+            <div className="w-[500px] bg-slate-400 overflow-y-scroll">
                 {items?.map((section) => (
                     <SectionCard section={section} key={section.id} />
                 ))}
             </div>
-            <div className="p-10 w-full">
+            <div className="p-10 w-full overflow-y-scroll">
                 {tokenStatus.data.status === 200 ? <Logout /> : null}
                 {children}
             </div>
