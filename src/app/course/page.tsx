@@ -4,7 +4,7 @@ import { CourseDetails } from '~/widgets'
 export default async function Page() {
     return (
         <div>
-            <div className="flex flex-col justify-center items-center p-5">
+            <div className="flex flex-col justify-center items-center p-5 ">
                 <Link href="/">
                     <Image
                         src={'/images/logo.png'}

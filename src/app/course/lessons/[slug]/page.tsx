@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { getData } from '~/server/getData'
 
@@ -19,11 +20,21 @@ export default async function Page({ params }: { params: { slug: string | string
     })
 
     return (
-        <div className="min-h-screen ">
+        <div className="min-h-screen content">
             {lesson?.data?.status === 401 ? (
-                <div className="text-center text-2xl">
-                    <div>You are not authorized to view this page</div>
-                    <Link href="/login">Login</Link>
+                <div className="text-center">
+                    <div className="text-xl">You are not authorized to view this page</div>
+                    <div className="aspect-square relative lg:max-w-3xl mx-auto">
+                        <Image src="/images/deney.jpg" alt="401" fill className="object-cover" />
+                    </div>
+                    <div className="mt-5">
+                        <Link
+                            href="/login"
+                            className="bg-amber-500 text-black rounded-md px-10 py-2"
+                        >
+                            Login
+                        </Link>
+                    </div>
                 </div>
             ) : (
                 <div className="" dangerouslySetInnerHTML={{ __html: lesson.content }} />
