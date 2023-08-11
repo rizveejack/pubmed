@@ -8,7 +8,10 @@ export default function Page() {
                 <div className="flex items-center justify-center mb-10">
                     <Image src={'/images/logo.png'} alt="logo" width={150} height={150} />
                 </div>
-                <div>Its a invite only platform. Please login with your email and password.</div>
+                <div className="text-center">
+                    Its a invite only platform. currently we did not accept any new enrollment.
+                    Please login with your email and password.
+                </div>
 
                 <div className="py-5">
                     <div className="grid grid-cols-2 gap-1">

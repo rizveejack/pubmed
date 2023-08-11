@@ -98,7 +98,7 @@ export default function LoginForm() {
                                 />
                             </svg>
                             <span className="inline-block ml-1">
-                                <Link href="/about">Sign up</Link>
+                                <Link href="/signup">Sign up</Link>
                             </span>
                         </button>
                     </div>
